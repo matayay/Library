@@ -2,9 +2,10 @@ let myLibrary = [];
 
 const add_new = document.querySelector('.new_book');
 const add_book = document.getElementById('book_form');
+const form = document.querySelector('.toggle');
 
 add_new.addEventListener('click', () => {
-    addBookToLibrary();
+    form.style.display = "block";
 });
 
 add_book.addEventListener('submit', (e) => {
@@ -13,7 +14,7 @@ add_book.addEventListener('submit', (e) => {
     myLibrary.push(new_book);
 
     e.target.reset();
-    removeForm()
+    form.style.display = "none";
     populateShelves(myLibrary);
 
     const books = document.querySelectorAll('.delete');
@@ -21,6 +22,7 @@ add_book.addEventListener('submit', (e) => {
     {
         del_btn.addEventListener('click', () => {
             myLibrary = removeBook(parseInt(del_btn.id), myLibrary);
+            updateID(myLibrary);
         });
     }
 });

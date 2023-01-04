@@ -6,18 +6,6 @@ function Book(title, author, page_count, read)
     this.read = read;
 }
 
-function addBookToLibrary() 
-{
-    const form = document.querySelector('.toggle');
-    form.style.display = "block";
-}
-
-function removeForm()
-{
-    const form = document.querySelector('.toggle');
-    form.style.display = "none";
-}
-
 function removeBook(book_index, library)
 {
     let updated = library.filter( (book) => {
@@ -78,10 +66,21 @@ function populateShelves(library)
         const del = document.createElement('button');
         del.textContent = "Delete";
         del.classList.toggle('delete');
-        del.id = i.toString();
         new_book.append(del);
 
         shelves.appendChild(new_book);
+    }
+
+    updateID(library);
+}
+
+function updateID(library)
+{
+    for ( let i = 0; i < library.length; i++ )
+    {
+        const books = document.querySelectorAll('.book');
+        const del = books[i].querySelector('.delete');
+        del.id = i.toString();
     }
 }
 
