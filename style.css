@@ -1,0 +1,103 @@
+body {
+    margin: 0rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    padding-top: 0rem;
+    padding-bottom: 0rem;
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 4rem;
+}
+
+.title h1 {
+    font-size: 4rem;
+}
+
+.new_book {
+    color: white;
+    background-color: brown;
+    font-size: 1rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-radius: 1rem;
+    border-color: brown;
+}
+
+.shelf {
+    display: grid;
+    grid-template: repeat(3, 1fr) / repeat(5, 1fr);
+    gap: 2rem;
+}
+
+.book {
+    background-color: lightblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem;
+    border-radius: 2rem;
+}
+
+.toggle {
+    display: none;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.my_form {
+    display: flex;
+    justify-content: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: lightgray;
+    border-radius: 2rem;
+    height: 35rem;
+    width: 25rem;
+    gap: 3rem;
+}
+
+form div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+form button {
+    color: white;
+    background-color: rgb(113, 82, 58);
+    font-size: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-radius: 1rem;
+    border-color: rgb(113, 82, 58);
+}
+
+.delete {
+    margin-top: 2rem;
+    color: white;
+    background-color: darkred;
+    font-size: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    border-radius: 1rem;
+    border-color: darkred;
+}

@@ -5,10 +5,43 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library</title>
-    <link rel="stylesheet" href="./style.css">
+    <script src="./tools.js"></script>
     <script src="./books.js" defer></script>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
+    <div class="title">
+        <h1>Library</h1>
+        <button class="new_book">Add Book</button>
+    </div>
     
+    <div class="toggle">
+        <div class="my_form">
+            <form id="book_form">
+                <div>
+                    <label for="title">TITLE</label>
+                    <input type="text" id="title" name="title" required>
+                </div>
+                <div>
+                    <label for="author">AUTHOR</label>
+                    <input type="text" id="author" name="author">
+                </div>
+                <div>
+                    <label for="pages">PAGES</label>
+                    <input type="number" id="pages" name="pages">
+                </div>
+                <div>
+                    <label for="already_read">Read?</label>
+                    <input type="checkbox" id="already_read" name="already_read">
+                </div>
+
+                <button id="submit-btn">Add</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="shelf">
+        
+    </div>
 </body>
 </html>
