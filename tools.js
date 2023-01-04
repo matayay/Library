@@ -6,6 +6,10 @@ function Book(title, author, page_count, read)
     this.read = read;
 }
 
+Book.prototype.toggleReadStatus = function() {
+    this.read = !(this.read);
+}
+
 function removeBook(book_index, library)
 {
     let updated = library.filter( (book) => {
@@ -32,6 +36,7 @@ function populateShelves(library)
         if ( library[i].read == true )
         {
             const read = document.createElement('button');
+            read.classList.toggle('read_btn');
             read.textContent = "Read";
             read.style.fontSize = "1rem";
             read.style.backgroundColor = "green";
@@ -49,6 +54,7 @@ function populateShelves(library)
         else if ( library[i].read == false )
         {
             const read = document.createElement('button');
+            read.classList.toggle('read_btn');
             read.textContent = "Not Read";
             read.style.fontSize = "1rem";
             read.style.backgroundColor = "red";
@@ -81,6 +87,9 @@ function updateID(library)
         const books = document.querySelectorAll('.book');
         const del = books[i].querySelector('.delete');
         del.id = i.toString();
+
+        const read = books[i].querySelector('.read_btn');
+        read.id = i.toString();
     }
 }
 
