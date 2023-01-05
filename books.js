@@ -8,6 +8,16 @@ add_new.addEventListener('click', () => {
     form.style.display = "block";
 });
 
+document.addEventListener('click', (e) => {
+    const isClosest = e.target.closest('form');
+    const book_button = e.target.closest('.new_book');
+
+    if (isClosest == null && book_button == null && form.style.display == "block") 
+    {
+        form.style.display = "none";
+    }
+})
+
 add_book.addEventListener('submit', (e) => {
     e.preventDefault();
     let new_book = new Book(e.target.title.value, e.target.author.value, e.target.pages.value, e.target.already_read.checked);
